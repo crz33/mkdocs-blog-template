@@ -1,1 +1,80 @@
 /* this should not be changed */
+
+:root {
+  /* for material */
+  --md-primary-fg-color: #192f60;
+  --md-primary-bg-color: #ffffff;
+  --md-text-font: YakuHanJPs, "Segoe UI", Arial, Meiryo, sans-serif;
+  --md-code-font: Consolas, Menlo, "courier new", monospace;
+
+  /* for this theme */
+  --crz33-font-weight: 400;
+  --crz33-link-color: #0645ad;
+  --crz33-header-bg-color: #fafaed;
+}
+
+/* site */
+html {
+  overflow-y: scroll;
+  font-weight: var(--crz33-font-weight);
+}
+
+.md-header {
+  background-color: var(--md-primary-bg-color);
+  color: var(--md-primary-fg-color);
+}
+
+main.md-main {
+  a:link {
+    color: var(--crz33-link-color);
+  }
+
+  a:visited {
+    color: var(--crz33-link-color);
+  }
+
+  a:hover {
+    color: var(--crz33-link-color);
+  }
+
+  a:active {
+    color: var(--crz33-link-color);
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* typeset */
+div.md-content article.md-typeset {
+  /* title */
+  h1 {
+    font-weight: bold;
+    color: var(--md-primary-fg-color);
+  }
+
+  /* h2 */
+  h2 {
+    margin-top: 4em;
+    font-weight: bold;
+    color: var(--md-primary-fg-color);
+    background-color: var(--crz33-header-bg-color);
+    border-left: 0.5em solid var(--md-primary-fg-color);
+    padding: 0.3em 0.5em 0.3em 0.5em;
+  }
+
+  /* h3 */
+  h3 {
+    margin-top: 3em;
+    font-weight: bold;
+    color: var(--md-primary-fg-color);
+    border-bottom: 2px solid var(--md-primary-fg-color);
+    padding: 0.3em 0.5em 0.3em 0.5em;
+  }
+
+  /* admonition */
+  .admonition {
+    font-size: 1em;
+  }
+}
