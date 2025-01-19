@@ -1,0 +1,17 @@
+{
+    // drag and drop + shift to save
+    "markdown.copyFiles.destination": {
+        "*": "./images/"
+    },
+
+    // formatter
+    "editor.formatOnSave": true,
+    "[markdown]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    // "Black Formatter", "Flake8"
+    "[python]": {
+        "editor.formatOnSave": true
+    }
+}
