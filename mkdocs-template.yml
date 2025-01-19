@@ -8,6 +8,30 @@ theme:
   palette:
     primary: custom
   custom_dir: overrides
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.path
+    - navigation.sections
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - content.code.copy
+
+markdown_extensions:
+  # see https://squidfunk.github.io/mkdocs-material/reference/admonitions/
+  - admonition
+  # see https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#+toc.toc_depth
+  - toc:
+      toc_depth: 2
+  # see https://squidfunk.github.io/mkdocs-material/reference/code-blocks/
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 
 extra_css:
   - assets/css/template.css
