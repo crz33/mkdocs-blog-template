@@ -1,1 +1,5 @@
 site_name: mkdocs-blog-template
+
+theme:
+  name: material
+  language: ja
