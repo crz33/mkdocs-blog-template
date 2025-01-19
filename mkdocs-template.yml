@@ -33,6 +33,19 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
 
+plugins:
+  - blog:
+      # to yyyy/MM/dd
+      post_date_format: short
+      # to "/blog/slug/"
+      post_url_format: "{slug}"
+      # remove readtime
+      post_readtime: false
+      # remove archive
+      archive: false
+      # remove toc in category
+      categories_toc: false
+
 extra_css:
   - assets/css/template.css
   - assets/css/extra.css
