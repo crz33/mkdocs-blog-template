@@ -5,3 +5,9 @@ theme:
   language: ja
   # see https://realfavicongenerator.net/
   logo: assets/images/favicon.ico
+  palette:
+    primary: custom
+
+extra_css:
+  - assets/css/template.css
+  - assets/css/extra.css
