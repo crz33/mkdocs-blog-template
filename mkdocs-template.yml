@@ -3,3 +3,5 @@ site_name: mkdocs-blog-template
 theme:
   name: material
   language: ja
+  # see https://realfavicongenerator.net/
+  logo: assets/images/favicon.ico
