@@ -1,4 +1,11 @@
 site_name: mkdocs-blog-template
+site_url: https://example.com
+
+nav:
+  - Home:
+      - Home: index.md
+  - Blog:
+      - blog/index.md
 
 theme:
   name: material
