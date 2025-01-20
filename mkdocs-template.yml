@@ -56,3 +56,6 @@ plugins:
 extra_css:
   - assets/css/template.css
   - assets/css/extra.css
+
+hooks:
+  - hooks-category.py
