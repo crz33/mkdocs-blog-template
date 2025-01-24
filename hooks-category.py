@@ -25,6 +25,6 @@ def on_page_markdown(markdown, page, config, files):
         print(markdown)
         markdown = markdown.replace(
             f"# {categories[page.url][0]}",
-            f"# 「{categories[page.url][1]}」の記事一覧",
+            f"# {categories[page.url][1]}",
         )
     return markdown
