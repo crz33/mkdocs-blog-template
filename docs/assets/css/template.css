@@ -10,7 +10,6 @@
   /* for this theme */
   --crz33-font-weight: 400;
   --crz33-link-color: #0645ad;
-  --crz33-header-bg-color: #fafaed;
 }
 
 /* site */
@@ -59,9 +58,11 @@ div.md-content article.md-typeset {
     margin-top: 4em;
     font-weight: bold;
     color: var(--md-primary-fg-color);
-    background-color: var(--crz33-header-bg-color);
-    border-left: 0.5em solid var(--md-primary-fg-color);
-    padding: 0.3em 0.5em 0.3em 0.5em;
+    border-bottom: 2px solid var(--md-primary-fg-color);
+  }
+
+  h2::before {
+    content: "# ";
   }
 
   /* h3 */
@@ -69,8 +70,10 @@ div.md-content article.md-typeset {
     margin-top: 3em;
     font-weight: bold;
     color: var(--md-primary-fg-color);
-    border-bottom: 2px solid var(--md-primary-fg-color);
-    padding: 0.3em 0.5em 0.3em 0.5em;
+  }
+
+  h3::before {
+    content: "## ";
   }
 
   /* admonition */
