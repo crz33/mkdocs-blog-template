@@ -7,9 +7,15 @@ nav:
   - Blog:
       - blog/index.md
 
+extra:
+  crz33:
+    cover_path: /assets/covers/{slug}.jpg
+    cardlink:
+      tag: Related articles
+
 theme:
   name: material
-  language: ja
+  language: en
   # see https://realfavicongenerator.net/
   logo: assets/images/favicon.ico
   palette:
@@ -59,3 +65,4 @@ extra_css:
 
 hooks:
   - hooks-category.py
+  - hooks-cardlink.py

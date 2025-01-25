@@ -22,7 +22,6 @@ def on_page_markdown(markdown, page, config, files):
     change category page title
     """
     if page.url in categories:
-        print(markdown)
         markdown = markdown.replace(
             f"# {categories[page.url][0]}",
             f"# {categories[page.url][1]}",
