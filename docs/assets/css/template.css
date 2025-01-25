@@ -82,15 +82,18 @@ div.md-content article.md-typeset {
   }
 }
 
+/* posts */
+article.md-post--excerpt {
+  margin-bottom: 1em;
+}
+
 /* cardlink */
 div.crz33-cardlink {
   position: relative;
-  border: 1px solid var(--crz33-link-color);
-  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
-  padding: 0.8em;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1);
 
   :hover {
-    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.2s;
   }
 
@@ -100,6 +103,7 @@ div.crz33-cardlink {
     left: 0;
     width: 100%;
     height: 100%;
+    text-decoration: none !important;
   }
 
   > div.label {
@@ -108,33 +112,55 @@ div.crz33-cardlink {
     color: var(--md-primary-bg-color);
     font-size: 0.7em;
     padding: 2px 10px;
-    top: 0;
-    left: 0;
+    top: -1em;
+    left: -1em;
     z-index: 1;
   }
 
   > div.body {
+    > div.header {
+      margin-left: 0.8em;
+      margin-top: auto;
+      margin-bottom: auto;
+      padding: 0.8em 0 0.8em 0;
+
+      h1 {
+        font-size: large;
+        font-weight: bold;
+        color: var(--crz33-link-color);
+        margin-bottom: 0.3em;
+      }
+      time {
+        color: var(--md-default-fg-color--light);
+        font-size: 1em;
+        margin-right: 1em;
+      }
+      span.categories {
+        color: var(--md-default-fg-color--light);
+        font-size: 1em;
+      }
+    }
+
+    > div.thumbnail {
+      display: flex;
+      img {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
+  }
+
+  > div.body.has_cover {
     display: grid;
     grid-template-columns: 21% auto;
     grid-gap: 1em 1em;
 
-    > div.thumbnail img {
-      vertical-align: middle;
+    @media (max-width: 960px) {
+      grid-template-columns: 30% auto;
     }
 
-    > div.header {
-      > a {
-        display: block;
-        text-decoration: none;
-        color: var(--md-default-fg-color--light);
-        font-weight: bold;
-      }
-
-      > span {
-        @media (max-width: 960px) {
-          display: none;
-        }
-      }
+    @media (max-width: 640px) {
+      grid-template-columns: 40% auto;
     }
   }
 }

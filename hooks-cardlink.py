@@ -7,17 +7,32 @@ from yaml import SafeLoader
 
 """ HTML of cardlink """
 # https://xwrite.jp/man_editor_blogcard/
-BLOG_CARD = (
+BLOG_CARD_COVER = (
     "<div class='crz33-cardlink'>"
+    "  <a href='{url}'></a>"
     "  <div class='label'>{tag}</div>"
-    "  <a href='{url}'>&nbsp;</a>"
-    "  <div class='body'>"
+    "  <div class='body has_cover'>"
     "    <div class='thumbnail'>"
     "      <img loading='lazy' src='{img_src}'/>"
     "    </div>"
     "    <div class='header'>"
-    "      <a href='{url}'>{title}</a>"
-    "      <span>{desc}</span>"
+    "      <h1>{title}</h1>"
+    "      <time>{time}</time>"
+    "      <span class='categories'>{categories}</span>"
+    "    </div>"
+    "  </div>"
+    "</div>"
+)
+
+BLOG_CARD = (
+    "<div class='crz33-cardlink'>"
+    "  <a href='{url}'></a>"
+    "  <div class='label'>{tag}</div>"
+    "  <div class='body'>"
+    "    <div class='header'>"
+    "      <h1>{title}</h1>"
+    "      <time>{time}</time>"
+    "      <span class='categories'>{categories}</span>"
     "    </div>"
     "  </div>"
     "</div>"
@@ -72,13 +87,19 @@ def create_cardlink(
     meta_match = YAML_RE.match(markdown)
     meta_info: dict = yaml.load(meta_match.group(1), SafeLoader) or {}
 
-    #
+    # cover
+    html_block = BLOG_CARD_COVER
+    if meta_info.get("cover", False):
+        html_block = BLOG_CARD_COVER
+    else:
+        html_block = BLOG_CARD
 
-    print("print cardlink {}".format(match[0]))
-    return BLOG_CARD.format(
+    return html_block.format(
         url=target_url,
         title=meta_info["title"],
         img_src=myconf["cover_path"].format(slug=meta_info["slug"]),
         desc=meta_info.get("description") or "",
         tag=myconf["cardlink"]["tag"],
+        time=meta_info.get("date"),
+        categories=", ".join(meta_info.get("categories") or ""),
     )
