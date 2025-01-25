@@ -7,6 +7,20 @@
 {% include "partials/actions.html" %}
 {% if "\x3ch1" not in page.content %}
   <h1>{{ page.title | d(config.site_name, true)}}</h1>
+  <!-- start cover image -->
+  {% if page.meta.cover %}
+    {% if config.extra %}
+      {% if config.extra.crz33 %}
+        {% if config.extra.crz33.cover_path %}
+          {% set cover_path = config.extra.crz33.cover_path %}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+    {% if cover_path and page.meta.slug %}
+      <img src="{{ cover_path.format(slug=page.meta.slug)}}" alt="Cover image">
+    {% endif %}
+  {% endif %}
+  <!-- end cover image -->
 {% endif %}
 {{ page.content }}
 {% include "partials/source-file.html" %}
