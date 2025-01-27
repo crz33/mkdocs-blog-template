@@ -10,6 +10,7 @@
   /* for this theme */
   --crz33-font-weight: 400;
   --crz33-link-color: #0645ad;
+  --crz33-toc-bg-color: #f9f9f9;
 }
 
 /* site */
@@ -59,10 +60,8 @@ div.md-content article.md-typeset {
     font-weight: bold;
     color: var(--md-primary-fg-color);
     border-bottom: 2px solid var(--md-primary-fg-color);
-  }
-
-  h2::before {
-    content: "# ";
+    padding-left: 0.5em;
+    padding-bottom: 0.3em;
   }
 
   /* h3 */
@@ -70,15 +69,37 @@ div.md-content article.md-typeset {
     margin-top: 3em;
     font-weight: bold;
     color: var(--md-primary-fg-color);
-  }
-
-  h3::before {
-    content: "## ";
+    border-left: 5px solid var(--md-primary-fg-color);
+    padding-left: 0.5em;
   }
 
   /* admonition */
   .admonition {
     font-size: 1em;
+  }
+
+  /* toc */
+  div.toc::before {
+    content: "目次";
+    font-weight: bold;
+    display: block;
+    margin: 1em 1em 0em 3em;
+  }
+
+  div.toc {
+    border-top: 1px dashed var(--md-primary-fg-color);
+    border-bottom: 1px dashed var(--md-primary-fg-color);
+    background-color: var(--crz33-toc-bg-color);
+    margin-top: 2em;
+
+    li {
+      list-style-type: square;
+      margin: 0em 1em 0.5em 2em;
+    }
+
+    li::before {
+      margin-right: 0.5em;
+    }
   }
 }
 
